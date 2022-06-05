@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '/ui/base/dashboard_page.dart';
-
 class NavigationService {
 
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
-  final GlobalKey<DashboardPageState> dashboardViewKey = GlobalKey<DashboardPageState>();
 
   Future<dynamic> navigateTo(String routeName) {
     return navigatorKey.currentState!.pushNamed(routeName);

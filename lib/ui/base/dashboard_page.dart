@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'dart:io';
@@ -283,7 +284,7 @@ class DashboardPageState extends State<DashboardPage> with WidgetsBindingObserve
           }
         },
         child: SafeArea(
-          bottom: Platform.isAndroid,
+          bottom: kIsWeb ? false : Platform.isAndroid,
           child: Scaffold(
             backgroundColor: AppColors.WHITE,
             appBar: CustomAppBar(title: 'AppName'.tr()),

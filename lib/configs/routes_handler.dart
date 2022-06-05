@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:fluro/fluro.dart';
 
+import '/helpers/argument.dart';
+
 import '/ui/widgets/others.dart';
 import '/ui/splash/splash_page.dart';
 import '/ui/base/dashboard_page.dart';
 import '/ui/base/details_page.dart';
-
-import '/helpers/argument.dart';
-
-import '/services/navigation_service.dart';
-
-import 'locator.dart';
 
 class Routes {
 
@@ -44,7 +40,7 @@ var rootHandler = Handler(
 
 var dashboardHandler = Handler(
   handlerFunc: (context, params) {
-    return DashboardPage(key: locator<NavigationService>().dashboardViewKey);
+    return DashboardPage();
   },
 );
 
