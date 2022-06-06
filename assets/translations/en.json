@@ -18,7 +18,7 @@
   "InComplete": "Incomplete",
   "TimeLeftParams": "{} hrs {} min",
   "NoDataDesc": "No To-Do data found. \nYou can create new to-do by pressing + button below.\n\n",
-  "FieldRequired": "title, start date & end date \nis required field.",
+  "FieldRequired": "Please fill in all the required fields.",
   "SomethingWentWrongWidget": "Something went wrong..",
   "ExitAppDesc": "double press back button to exit app"
 }

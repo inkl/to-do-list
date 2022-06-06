@@ -18,7 +18,7 @@
   "InComplete": "未完成",
   "TimeLeftParams": "{}小时 {}分钟",
   "NoDataDesc": "未找到待办事项数据。\n您可以通过按下面的+按钮来创建新的待办事项。\n\n",
-  "FieldRequired": "标题、开始日期和结束日期\n是必填字段。",
+  "FieldRequired": "请填写所有必填字段。",
   "SomethingWentWrongWidget": "出问题了。",
   "ExitAppDesc": "双击返回按钮退出应用程序。"
 }

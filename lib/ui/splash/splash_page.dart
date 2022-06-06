@@ -4,10 +4,11 @@ import 'package:after_layout/after_layout.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fluro/fluro.dart';
 
-import '/configs/routes_handler.dart';
-
+import '/helpers/constants.dart';
 import '/helpers/styles.dart';
 import '/helpers/colors.dart';
+
+import '/configs/routes_handler.dart';
 
 class SplashPage extends StatefulWidget {
 
@@ -62,6 +63,7 @@ class SplashPageState extends State<SplashPage> with AfterLayoutMixin<SplashPage
             child: AppBar(
               backgroundColor: AppColors.WHITE,
               elevation: 0.0,
+              title: Text(Constants.APP_NAME, style: appBarTitleDarkTextStyle),
             ),
           ),
           body: LayoutBuilder(

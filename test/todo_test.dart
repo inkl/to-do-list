@@ -9,11 +9,12 @@ void main() {
 
   group('To-Do', () {
     ObservableList<TodoListBase> todoList = ObservableList<TodoListBase>.of([]);
-    test('should start at 0', () {
+
+    test('Should be empty', () {
       expect(todoList.length, 0);
     });
 
-    test('should be incremented when adding', () {
+    test('Should be increased when adding', () {
       final TodoListBase todo = TodoListBase();
       todo.id = 100;
       todo.title = 'Testing id is 100';
@@ -23,12 +24,12 @@ void main() {
       expect(todoList.isNotEmpty, true);
     });
 
-    test('should retrieve todo items', () {
+    test('Should retrieve todo items', () {
       TodoListBase? todo = todoList.where((element) => element.id == 100).first;
       expect(todo != null, true);
     });
 
-    test('should be changed when updating', () {
+    test('Should changed when updating', () {
       TodoListBase? todo = todoList.where((element) => element.id == 100).first;
       var title = todo.title;
       todo.title = 'Testing id confirmed is 100';
