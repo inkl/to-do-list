@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:sized_context/sized_context.dart';
 
 import '/helpers/colors.dart';
 import '/helpers/styles.dart';
@@ -32,7 +33,7 @@ Future showStatusWidget(String desc, bool success) {
             },
             child: SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                padding: EdgeInsets.only(bottom: context.mq.viewInsets.bottom),
                 margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,

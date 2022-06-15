@@ -6,11 +6,10 @@ import 'dart:io';
 import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:countdown_widget/countdown_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:countdown_widget/countdown_widget.dart';
-import 'package:sizer/sizer.dart';
 
 import '/helpers/colors.dart';
 import '/helpers/styles.dart';
@@ -88,11 +87,10 @@ class DashboardPageState extends State<DashboardPage> with WidgetsBindingObserve
           var list = _baseStore.getTodoList;
           // Show empty data description on the screen if no data found.
           if (list.isEmpty) {
-            return Center(
-              child: SizedBox(
-                width: 30.h,
-                child: Text('NoDataDesc'.tr(), textAlign: TextAlign.center, style: textStyleLabel18),
-              ),
+            return Container(
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              alignment: Alignment.center,
+              child: Text('NoDataDesc'.tr(), textAlign: TextAlign.center, style: textStyleLabel18),
             );
           }
           return ListView(

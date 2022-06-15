@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fluro/fluro.dart';
 
@@ -43,7 +44,7 @@ class SplashPageState extends State<SplashPage> with AfterLayoutMixin<SplashPage
   Future loadData() async {
 
     // Delay 1 seconds on the Splash screen before navigate to next pages.
-    Future.delayed(const Duration(milliseconds: 1000), () async {
+    Future.delayed(const Duration(milliseconds: 2000), () async {
       Routes.router.navigateTo(context, Routes.dashboard, replace: true, transition: TransitionType.none);
     });
 
@@ -73,7 +74,9 @@ class SplashPageState extends State<SplashPage> with AfterLayoutMixin<SplashPage
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('AppName'.tr(), style: splashTitleTextStyle),
+                    FadeInDown(
+                      child: Text('AppName'.tr(), style: splashTitleTextStyle),
+                    ),
                   ],
                 ),
               );

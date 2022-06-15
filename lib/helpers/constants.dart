@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+
+import 'package:sizer/sizer.dart';
+
 class Constants {
 
   // Hardcoded text.
@@ -34,5 +38,11 @@ class Constants {
   static const double FONT_20 = 20.0;
   static const double FONT_24 = 24.0;
   static const double FONT_32 = 32.0;
+
+  static double font16 = 16.sp;
+  static double font18 = 18.sp;
+  static double font20 = 20.sp;
+  static double font24 = 24.sp;
+  static double font32 = 32.sp;
 
 }

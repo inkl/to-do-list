@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:sized_context/sized_context.dart';
 
 import '/helpers/enums.dart';
 import '/helpers/utils.dart';
@@ -58,12 +60,13 @@ class DetailsPageState extends State<DetailsPage> with AfterLayoutMixin<DetailsP
   }
 
   Future loadData() async {
-
     // This is to handle keyboard visibility. Used to hide some widgets in the pages.
-    var keyboardVisibilityController = KeyboardVisibilityController();
-    keyboardVisibilityController.onChange.listen((bool visible) {
-      _baseStore.setKeyboardOpened(visible);
-    });
+    if (!kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android)) {
+      var keyboardVisibilityController = KeyboardVisibilityController();
+      keyboardVisibilityController.onChange.listen((bool visible) {
+        _baseStore.setKeyboardOpened(visible);
+      });
+    }
 
   }
 
@@ -224,7 +227,7 @@ class DetailsPageState extends State<DetailsPage> with AfterLayoutMixin<DetailsP
       builder: (_) => Visibility(
         visible: !_baseStore.getKeyboardOpened,
         child: Container(
-          width: MediaQuery.of(context).size.width,
+          width: context.mq.size.width,
           padding: EdgeInsets.symmetric(vertical: 15.0),
           decoration: BoxDecoration(
             color: _baseStore.getIsEditing ? AppColors.ORANGE : AppColors.BLACK,
